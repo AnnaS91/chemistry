@@ -1,0 +1,16 @@
+CREATE SCHEMA chemistry;
+
+CREATE TABLE chemistry.chem_type (type_id BIGINT AUTO_INCREMENT, name TEXT, short_name TEXT, PRIMARY KEY(type_id));
+
+CREATE TABLE chemistry.compound (
+                id BIGINT AUTO_INCREMENT,
+                name TEXT NOT NULL,
+                weight INT,
+                type_id BIGINT,
+                PRIMARY KEY(id),
+				FOREIGN KEY (type_id) REFERENCES chemistry.chem_type (type_id)
+                );
+
+INSERT INTO chemistry.chem_type (name, short_name) VALUES ('molecule', 'ML');
+INSERT INTO chemistry.chem_type (name, short_name) VALUES ('nucleotide', 'NT');
+INSERT INTO chemistry.chem_type (name, short_name) VALUES ('nucleoside', 'NS');
