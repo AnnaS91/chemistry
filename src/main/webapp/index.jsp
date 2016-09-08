@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <title>Chemistry</title>
 </head>
+<jsp:useBean id="newCompound" class="com.epam.chemistry.model.Compound" scope="request"/>
+<jsp:setProperty property="*" name="newCompound" />
 <body>
     <h2>Welcome to <strong>Chemistry</strong> catalog!
     </h2>
-
-    <table border="0">
+        <table border="0">
         <thead>
             <tr>
                 <th>You can add your compound in our base</th>
@@ -22,9 +23,9 @@
             </tr>
             <tr>
                 <td>
-                      <form>
-                          Compound name: <input type="text"  name="name" size="10"><br>
-                          Compound type: <input type="text"  name="type" size="10"><br>
+                      <form action="compound" method="post">
+                          Compound name: <input type="text" value="${newCompound.name}"  name="name" size="10"><br>
+                          Compound type: <input type="text" value="${newCompound.type}"  name="type" size="10"><br>
                           <p>
                           <table>
                               <tr>

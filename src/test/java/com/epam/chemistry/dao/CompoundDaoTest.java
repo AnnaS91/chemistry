@@ -3,6 +3,7 @@ package com.epam.chemistry.dao;
 import com.epam.chemistry.model.Compound;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -21,7 +22,7 @@ public class CompoundDaoTest {
     Connection connection;
 
     @Before
-    public void setUp() throws SQLException {
+    public void setUp() throws SQLException, IllegalAccessException, InstantiationException, ClassNotFoundException {
         connection = SQLConnection.getInstance().getConnection();
         compoundDao = new CompoundDao(connection);
         Compound compound = new Compound("aspirin", 1);
@@ -34,11 +35,13 @@ public class CompoundDaoTest {
     }
 
     @Test
+    @Ignore
     public void addCompoundTest(){
 
     }
 
     @Test
+    @Ignore
     public void getAllTest(){
         List<Compound> compounds = compoundDao.getAll();
         assertEquals(1, compounds.size());

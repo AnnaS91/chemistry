@@ -10,6 +10,8 @@ public class Compound {
     private int weight;
     private String name;
 
+    public Compound(){}
+
     public Compound(final String name, final int type) {
         this.name = name;
         this.type = type;
