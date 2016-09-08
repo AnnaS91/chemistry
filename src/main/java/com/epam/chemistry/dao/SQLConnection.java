@@ -22,7 +22,8 @@ public class SQLConnection {
         return instance;
     }
 
-    public Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
