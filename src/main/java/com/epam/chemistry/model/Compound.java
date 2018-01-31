@@ -1,4 +1,4 @@
-package com.epam.chemistry.model;
+﻿package com.epam.chemistry.model;
 
 /**
  * Created by мвидео on 03.09.2016.
@@ -9,6 +9,7 @@ public class Compound {
     private int type;
     private int weight;
     private String name;
+private String parent;
 
     public Compound(){}
 
